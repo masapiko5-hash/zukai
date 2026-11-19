@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図の見本 · もしも</title>
+<body style="max-width: 720px; margin: 16px auto; padding: 0 12px; font-family: system-ui, sans-serif">
+<div id="z"></div>
+<script src="../zukai.js"></script>
+<script>
+  zukai('#z', {
+    type: 'whatif',
+    eye: '読書にかかる日数の目安',
+    sliders: [
+      { key: 'pages', label: '残りのページ', min: 80, max: 320, step: 10, value: 180, unit: 'ページ' },
+      { key: 'daily', label: '1日に読む量', min: 10, max: 50, step: 5, value: 20, unit: 'ページ' }
+    ],
+    calc({ pages, daily }) {
+      const days = Math.ceil(pages / daily)
+      const slowDays = Math.ceil(pages / 10)
+      return {
+        title: 'このペースなら' + days + '日で読める',
+        bars: [
+          { label: '選んだペース', value: days, text: days + '日', tone: 'accent' },
+          { label: '1日10ページ', value: slowDays, text: slowDays + '日' }
+        ],
+        cap: ['残り' + pages + 'ページを1日' + daily + 'ページずつ読む', '最後の端数は1日に数える。']
+      }
+    }
+  })
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図の見本 · 比べる</title>
+<body style="max-width: 720px; margin: 16px auto; padding: 0 12px; font-family: system-ui, sans-serif">
+<div id="z"></div>
+<script src="../zukai.js"></script>
+<script>
+  zukai('#z', {
+    type: 'compare',
+    eye: '喫茶店の候補',
+    title: 'ゆっくり話すなら案 B',
+    cards: [
+      { name: '案 A', icon: 'cup', rows: [
+        ['席', 'カウンターのみ', 'warn'],
+        ['予約', '不可', 'ng'],
+        ['場所', '駅前']
+      ] },
+      { name: '案 B', icon: 'users', tag: 'おすすめ', pick: true, rows: [
+        ['席', 'テーブルあり', 'ok'],
+        ['予約', '受付あり', 'ok'],
+        ['場所', '公園のそば']
+      ] },
+      { name: '案 C', icon: 'sun', rows: [
+        ['席', 'テラス中心'],
+        ['予約', '要確認', 'q'],
+        ['場所', '川沿い']
+      ] }
+    ],
+    cap: ['案 B は向かい合って座れる', '集合時刻が決まったらテーブル席を予約する。']
+  })
+</script>
+</body>
+</html>

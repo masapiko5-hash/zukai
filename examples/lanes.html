@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図の見本 · 分担</title>
+<body style="max-width: 720px; margin: 16px auto; padding: 0 12px; font-family: system-ui, sans-serif">
+<div id="z"></div>
+<script src="../zukai.js"></script>
+<script>
+  zukai('#z', {
+    type: 'lanes',
+    eye: 'ピクニック当日の分担',
+    title: '場所を確保してから合流する',
+    lanes: [
+      { key: 'place', name: '場所係', sub: '到着したら', icon: 'map-pin', hot: true,
+        items: [['search', '空いている場所を探す'], '合流場所を知らせる'],
+        cap: ['場所係は日陰を探す', '合流しやすい目印も知らせる。'] },
+      { key: 'meal', name: '食事係', sub: '集合するまでに', icon: 'basket',
+        items: [['bottle', '飲み物をまとめる'], '取り皿を用意する'],
+        cap: ['食事係はその場で配れるようにする', '飲み物と取り皿はすぐ出せる袋へ。'] },
+      { key: 'cleanup', name: '片付け係', sub: '帰る前に', icon: 'leaf',
+        items: [['box', '持ち帰り用の袋を配る'], '忘れ物を確かめる'],
+        cap: ['片付け係は袋を先に配る', '食事のあとに忘れ物を確かめる。'] }
+    ],
+    cap: ['合流の連絡は場所係が担当', '日陰と分かりやすい目印を探しておく。']
+  })
+</script>
+</body>
+</html>

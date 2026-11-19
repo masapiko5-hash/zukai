@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図の見本 · 数字</title>
+<body style="max-width: 720px; margin: 16px auto; padding: 0 12px; font-family: system-ui, sans-serif">
+<div id="z"></div>
+<script src="../zukai.js"></script>
+<script>
+  zukai('#z', {
+    type: 'numbers',
+    eye: '公園までの移動時間の目安',
+    title: '晴れた日は自転車が早い',
+    kpis: [
+      { label: '自転車', value: '12分', tone: 'accent' },
+      { label: 'バス', value: '18分', note: '待ち時間込み' }
+    ],
+    bars: [
+      { label: '自転車', sub: '川沿いの道', value: 12, text: '12分', tone: 'accent', tag: '最短', group: 'outside' },
+      { label: 'バス', value: 18, text: '18分', group: 'shelter' },
+      { label: '徒歩', sub: '商店街を通る', value: 32, text: '32分', group: 'outside' }
+    ],
+    chips: [
+      { key: 'outside', label: '屋外の移動', cap: ['距離が短ければ自転車', '寄り道を楽しむなら徒歩も選べる。'] },
+      { key: 'shelter', label: '屋根のある移動', cap: ['雨の日はバスが便利', '出かける前に発車時刻を確認する。'] }
+    ],
+    cap: ['晴れた日は自転車、雨の日はバス', '時間は出発地点から公園の入口までの目安。']
+  })
+</script>
+</body>
+</html>

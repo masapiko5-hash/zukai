@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>図の見本 · 層</title>
+<body style="max-width: 720px; margin: 16px auto; padding: 0 12px; font-family: system-ui, sans-serif">
+<div id="z"></div>
+<script src="../zukai.js"></script>
+<script>
+  zukai('#z', {
+    type: 'layers',
+    eye: '遠足のリュック',
+    title: 'すぐ使う物は上段に入れる',
+    layers: [
+      { key: 'top', name: '上段', sub: '取り出しやすい', hot: true,
+        items: [{ text: '雨具', mark: 'ok' }, '地図', 'ハンカチ'],
+        cap: ['途中で使う物を上段へ', '雨具は片手で取り出せる位置に入れる。'] },
+      { key: 'middle', name: '中段', sub: '立てて入れる', items: ['水筒', '弁当'],
+        cap: ['中段には傾けたくない物', '水筒と弁当は立てて入れる。'] },
+      { key: 'bottom', name: '下段', sub: '袋を閉じる', dashed: true,
+        items: [{ text: '着替え', mark: 'lock' }, '予備の袋'],
+        cap: ['予備の物は下段へ', '着替えは水が入らない袋にまとめる。'] }
+    ],
+    legend: [['ok', '取り出しやすく'], ['lock', '袋を閉じる']],
+    cap: ['使う順に上から並べる', '着替えなどの予備は下段にまとめておく。']
+  })
+</script>
+</body>
+</html>
